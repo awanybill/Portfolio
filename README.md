@@ -26,5 +26,5 @@ Modern portfolio showcasing my work as a full-stack developer and tech content c
 [View Live Site](https://awanybill.github.io/Portfolio/)
 
 ## 📱 Connect
-- [YouTube](www.youtube.com/@kjveecreations)
+- [YouTube](https://youtube.com/@kjveecreations?si=PJSb5I4tabo3NsBc))
 - [GitHub](https://github.com/awanybill)
