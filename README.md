@@ -23,8 +23,8 @@ Modern portfolio showcasing my work as a full-stack developer and tech content c
 2. Open `index.html` in browser
 
 ## 🌐 Live Demo  
-[View Live Site](https://yourwebsite.com)
+[View Live Site](https://awanybill.github.io/Portfolio/)
 
 ## 📱 Connect
-- [YouTube](https://youtube.com/@yourchannel)
-- [GitHub](https://github.com/yourusername)
+- [YouTube](www.youtube.com/@kjveecreations)
+- [GitHub](https://github.com/awanybill)
