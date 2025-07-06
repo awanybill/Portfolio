@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About KJ Vee - Developer, Creator & Educator</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    /* About Page Specific Styles */
+    .about-hero {
+      background: linear-gradient(135deg, var(--primary), var(--blend));
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+    }
+    
+    .identity-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .identity-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .identity-card:hover {
+      transform: translateY(-10px);
+      background: rgba(52, 22, 206, 0.2);
+    }
+    
+    .identity-card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .channel-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    
+    .channel-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 280px;
+      text-align: center;
+    }
+    
+    .teaching-philosophy {
+      background: rgba(255,255,255,0.03);
+      border-left: 4px solid var(--button);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (Same as main page) -->
+  <header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="images/logo.png" alt="KJ Vee Logo">
+    </div>
+    
+    <!-- Mobile Toggle Button -->
+    <button class="menu-toggle" aria-label="Menu" id="mobile-menu">
+      <span class="hamburger"></span>
+    </button>
+    
+    <!-- Navigation -->
+    <nav id="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <a href="contact.html" class="btn-primary">Let's Talk</a>
+  </div>
+</header>
+  <!-- About Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Beyond the Code</h1>
+      <p class="subtitle">Developer. Content Creator. Future Educator.</p>
+    </div>
+  </section>
+
+  <!-- Main About Content -->
+  <section class="container" style="padding: 60px 20px;">
+    <div class="about-intro">
+      <h2>My <span>Multidimensional</span> Journey</h2>
+      <p>I bridge the gap between technical expertise and creative expression, transforming complex concepts into accessible knowledge.</p>
+    </div>
+
+    <!-- Identity Cards -->
+    <div class="identity-cards">
+      <div class="identity-card">
+        <img src="images/backend-icon.png" alt="Backend Development" width="60" height="60">
+        <h3>Backend Engineer</h3>
+        <p>Specializing in PHP and Python, I build robust, scalable systems that power modern web applications. My focus is on clean architecture and efficient database design.</p>
+        <ul class="skills-list">
+          <li>PHP (Laravel, Symfony)</li>
+          <li>Python (Django, Flask)</li>
+          <li>API Development</li>
+          <li>Database Optimization</li>
+        </ul>
+      </div>
+      
+      <div class="identity-card">
+        <img src="images/creator-icon.png" alt="Content Creation" width="60" height="60">
+        <h3>Content Creator</h3>
+        <p>Through engaging videos and tutorials, I demystify technology for my growing community across multiple platforms.</p>
+        <div class="channel-grid">
+          <a href="[YOUR_TIKTOK_URL]" target="_blank" class="channel-card">
+            <img src="images/tiktok-icon.png" alt="TikTok" width="40" height="40">
+            <h4>TikTok</h4>
+            <p>@KJVee_Tech</p>
+            <p>Quick tech tips & trends</p>
+          </a>
+          <a href="[YOUR_YOUTUBE_URL]" target="_blank" class="channel-card">
+            <img src="images/youtube-icon.png" alt="YouTube" width="40" height="40">
+            <h4>YouTube</h4>
+            <p>KJ Vee Dev</p>
+            <p>In-depth tutorials</p>
+          </a>
+        </div>
+      </div>
+      
+      <div class="identity-card">
+        <img src="images/teaching-icon.png" alt="Teaching" width="60" height="60">
+        <h3>Future Educator</h3>
+        <p>Teaching isn't just a future goal—it's how I approach every project and interaction today.</p>
+        <div class="teaching-philosophy">
+          <p><em>"The most effective learning happens when we break down barriers between teacher and student, creating collaborative spaces where questions are celebrated."</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Timeline -->
+    <div class="career-timeline">
+      <h2>My <span>Professional</span> Path</h2>
+      <div class="timeline">
+        <!-- Timeline items would go here -->
+        <div class="timeline-item">
+          <h4>2023-Present</h4>
+          <h3>Backend Developer</h3>
+          <p>Building scalable web applications while growing my tech community</p>
+        </div>
+        <!-- Add more timeline items -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Same as main page) -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year">2025</span> KJ Vee Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

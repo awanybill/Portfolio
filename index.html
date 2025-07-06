@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KJ Vee Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Preload CSS for better performance -->
+  <link rel="preload" href="styles/style.css" as="style">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="images/logo.png" alt="KJ Vee Logo">
+    </div>
+    
+    <!-- Mobile Toggle Button -->
+    <button class="menu-toggle" aria-label="Menu" id="mobile-menu">
+      <span class="hamburger"></span>
+    </button>
+    
+    <!-- Navigation -->
+    <nav id="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <a href="contact.html" class="btn-primary">Let's Talk</a>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="text">
+        <h2>Awany Joseph Bill (KJ Vee)</h2>
+        <h1>Hey! I'm KJ Vee</h1>
+        <h2><span>I'm a Web Designer and Developer</span></h2>
+        <p>
+          I specialize in crafting responsive, user-friendly websites that blend clean design with powerful 
+          functionality. With a strong foundation in HTML, CSS, JavaScript, and modern frameworks...
+        </p>
+        <div class="social-icons">
+          <a href="#"><img src="images/github-logo_25231.png" alt="GitHub" width="32" height="32"></a>
+          <a href="#"><img src="images/instagram_3955027.png" alt="Instagram" width="32" height="32"></a>
+          <a href="#"><img src="images/tik-tok_3046126.png" alt="TikTok" width="32" height="32"></a>
+          <a href="#"><img src="images/youtube_152810.png" alt="YouTube" width="32" height="32"></a>
+        </div>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+      <div class="hero-image">
+        <img src="images/image.png" alt="KJ Vee" width="400" height="auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section class="logos">
+    <div class="container logo-row">
+      <img src="logo1.png" alt="Sponsor Logo" width="120" height="40">
+      <img src="logo2.png" alt="Sponsor Logo" width="120" height="40">
+      <img src="logo3.png" alt="Sponsor Logo" width="120" height="40">
+      <img src="logo4.png" alt="Sponsor Logo" width="120" height="40">
+      <img src="logo5.png" alt="Sponsor Logo" width="120" height="40">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-content">
+      <div class="about-image">
+        <img src="jenna-profile.jpg" alt="KJ Vee Profile" width="500" height="auto">
+      </div>
+      <div class="about-text">
+        <h3>About Me</h3>
+        <h2>I am available for <span>Web development</span> Projects</h2>
+        <p>
+          All your Web pages and Web application needs in one place
+        </p>
+        <ul class="about-stats">
+          <li><strong>20+</strong> Recommendations</li>
+          <li><strong>3+</strong> Years Experience</li>
+          <li><strong>10+</strong> Projects Completed</li>
+        </ul>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h3>My Work</h3>
+      <h2>Recent Projects</h2>
+      <div class="project-gallery">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Website Design Project" width="400" height="300">
+          <h4>Website Design</h4>
+          <p>Web Design, App Design</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Web Application Project" width="400" height="300">
+          <h4>Website Design</h4>
+          <p>Web Design, App Design</p>
+        </div>
+        <div class="project-card">
+          <img src="project3.jpg" alt="Mobile App Project" width="400" height="300">
+          <h4>Website Design</h4>
+          <p>Web Design, App Design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h3>Services</h3>
+      <h2>Design <span>Services</span> I Offer</h2>
+      <div class="service-cards">
+        <div class="service-card">
+          <img src="service1.jpg" alt="Web Design Service" width="80" height="80">
+          <h4>Web Design</h4>
+        </div>
+        <div class="service-card">
+          <img src="service2.jpg" alt="Business Strategy Service" width="80" height="80">
+          <h4>Business Strategy</h4>
+        </div>
+        <div class="service-card">
+          <img src="service3.jpg" alt="UX Research Service" width="80" height="80">
+          <h4>UX Research</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; <span id="current-year">2025</span> Awany Joseph Bill Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
