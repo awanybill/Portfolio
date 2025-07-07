@@ -66,57 +66,57 @@
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
     }
-    
-    /* Mobile Responsiveness Fixes */
-    @media (max-width: 992px) {
-      /* Mobile Menu Toggle */
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 24px;
-        width: 30px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-      }
-      
-      .menu-toggle span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background: white;
-        transition: all 0.3s ease;
-      }
-      
-      .menu-toggle.active span:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-      }
-      
-      .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      
-      .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-      }
-      
-      /* Navigation */
-      .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 80px);
-        background: rgba(0,0,0,0.95);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 40px;
-        transition: left 0.3s ease;
-        z-index: 1000;
-      }
+    /* Mobile Menu (Same as homepage) */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 80%;
+    height: calc(100vh - 80px);
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    padding-top: 30px;
+    transition: left 0.3s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
       
       .nav-links.active {
         left: 0;
@@ -146,33 +146,35 @@
         padding: 10px 20px;
         font-size: 0.9rem;
       }
-    }
+      
   </style>
 </head>
 <body>
   <!-- Fixed Header -->
   <header>
-    <div class="container nav">
-      <div class="logo">
-        <img src="images/logo.png" alt="KJ Vee Logo" width="150" height="auto">
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-      <a href="#contact" class="btn-primary">Let's Talk</a>
+  <div class="container nav">
+    <div class="logo">
+      <img src="images/logo.png" alt="KJ Vee Logo">
     </div>
-  </header>
+    
+    <!-- Must use this exact button structure -->
+    <button class="menu-toggle" id="mobile-menu" aria-label="Menu">
+      <span class="hamburger"></span>
+    </button>
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <a href="contact.html" class="btn-primary">Let's Talk</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="contact-hero" id="contact">
