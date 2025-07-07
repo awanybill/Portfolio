@@ -167,13 +167,13 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
+ <header>
   <div class="container nav">
     <div class="logo">
       <img src="images/logo.png" alt="KJ Vee Logo">
     </div>
     
-    <!-- Same button structure -->
+    <!-- This exact button must exist -->
     <button class="menu-toggle" id="mobile-menu" aria-label="Menu">
       <span class="hamburger"></span>
     </button>
@@ -190,8 +190,7 @@
     
     <a href="contact.html" class="btn-primary">Let's Talk</a>
   </div>
-</header>
-  <!-- Hero Section -->
+</header> <!-- Hero Section -->
   <section class="services-hero">
     <div class="container">
       <h1>My Services</h1>
@@ -339,23 +338,9 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
   <script>
-// Same JavaScript as homepage
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  navLinks.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
-});
-
-// Close when clicking links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    menuToggle.classList.remove('active');
-    navLinks.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  });
+document.getElementById('mobile-menu')?.addEventListener('click', function() {
+  document.querySelector('.nav-links')?.classList.toggle('show');
 });
 </script>
 </body>

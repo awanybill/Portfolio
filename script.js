@@ -38,16 +38,13 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // Mobile Menu Toggle - Match Homepage Exactly
-const menuToggle = document.getElementById('mobile-menu');
-// Removed duplicate declaration of navLinks
-
 function toggleMenu() {
-  menuToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
   navLinks.classList.toggle('active');
   document.body.classList.toggle('menu-open');
 }
 
-menuToggle.addEventListener('click', function(e) {
+mobileMenu.addEventListener('click', function(e) {
   e.stopPropagation();
   toggleMenu();
 });
