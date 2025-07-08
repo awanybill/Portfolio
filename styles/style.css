@@ -816,23 +816,3 @@ footer {
   }
 }
 
-/* Only add these two rules */
-@media (max-width: 992px) {
-  .menu-toggle {
-    display: flex !important;
-    flex-direction: column;
-    gap: 6px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1000;
-  }
-  
-  .menu-toggle .hamburger {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: white;
-  }
-}
