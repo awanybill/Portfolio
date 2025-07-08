@@ -60,6 +60,20 @@
       padding: 2rem;
       margin: 3rem 0;
     }
+
+    /* Responsive adjustments for about page specific grids */
+    @media (max-width: 600px) {
+      .identity-cards {
+        grid-template-columns: 1fr; /* Stack cards on very small screens */
+      }
+      .channel-grid {
+        flex-direction: column; /* Stack channel cards */
+        align-items: center;
+      }
+      .channel-card {
+        width: 100%; /* Full width for channel cards on small screens */
+      }
+    }
   </style>
 </head>
 <body>
@@ -170,9 +184,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-  </script>
   <script src="script.js"></script>
 </body>
 </html>

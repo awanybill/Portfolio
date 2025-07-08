@@ -66,87 +66,23 @@
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
     }
-    /* Mobile Menu (Same as homepage) */
-@media (max-width: 992px) {
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: white;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 80%;
-    height: calc(100vh - 80px);
-    background: rgba(0,0,0,0.95);
-    flex-direction: column;
-    padding-top: 30px;
-    transition: left 0.3s ease;
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-}
-      
-      .nav-links.active {
-        left: 0;
-      }
-      
-      /* Header adjustments */
-      header {
-        padding: 20px 0;
-      }
-      
-      /* Contact page specific */
+    
+    /* Responsive adjustments for contact page */
+    @media (max-width: 768px) {
       .contact-hero {
         clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
         padding: 100px 0 60px;
       }
       
       .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      /* Prevent body scroll when menu is open */
-      body.menu-open {
-        overflow: hidden;
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
       }
       
       .btn-primary {
         padding: 10px 20px;
         font-size: 0.9rem;
       }
-      
+    }
   </style>
 </head>
 <body>
@@ -249,46 +185,6 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggle = document.getElementById('mobile-menu');
-      const nav = document.querySelector('.nav-links');
-      
-      function toggleMenu() {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-      }
-      
-      // Toggle menu on button click
-      toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleMenu();
-      });
-      
-      // Close when clicking links
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', toggleMenu);
-      });
-      
-      // Close when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.nav') && nav.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-      
-      // Close on escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && nav.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-      
-      // Update copyright year
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

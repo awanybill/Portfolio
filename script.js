@@ -1,69 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('mobile-menu');
-  const nav = document.querySelector('.nav-links');
-  
-  toggle.addEventListener('click', function() {
-    this.classList.toggle('active');
-    nav.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
+  // Get elements for mobile menu
+  const mobileMenuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const body = document.body;
+
+  // Function to toggle mobile menu state
+  function toggleMobileMenu() {
+    mobileMenuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open'); // Prevents scrolling when menu is open
+  }
+
+  // Event listener for the mobile menu toggle button
+  mobileMenuToggle.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent click from propagating to document
+    toggleMobileMenu();
   });
-  
-  // Close menu when clicking links
+
+  // Close mobile menu when a navigation link is clicked
   document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
-      toggle.classList.remove('active');
-      nav.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    });
+    link.addEventListener('click', toggleMobileMenu);
   });
-});
 
-// Mobile Menu Toggle (Same as homepage)
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenu.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
-  navLinks.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
-});
-
-// Close when clicking links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    navLinks.classList.remove('active');
-    document.body.classList.remove('menu-open');
+  // Close mobile menu when clicking outside of the navigation area
+  document.addEventListener('click', function(e) {
+    // Check if the click is outside the header (which contains the nav and toggle)
+    if (!e.target.closest('header') && navLinks.classList.contains('active')) {
+      toggleMobileMenu();
+    }
   });
-});
 
-// Mobile Menu Toggle - Match Homepage Exactly
-function toggleMenu() {
-  mobileMenu.classList.toggle('active');
-  navLinks.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
-}
+  // Close mobile menu on Escape key press
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      toggleMobileMenu();
+    }
+  });
 
-mobileMenu.addEventListener('click', function(e) {
-  e.stopPropagation();
-  toggleMenu();
-});
-
-// Close when clicking links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', toggleMenu);
-});
-
-// Close when clicking outside
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-    toggleMenu();
+  // Auto-update copyright year in the footer
+  const currentYearSpan = document.getElementById('current-year');
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
   }
-});
 
-// Close on escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-    toggleMenu();
-  }
+  // Add 'scrolled' class to header on scroll for styling
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) { // Adjust scroll threshold as needed
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
 });
